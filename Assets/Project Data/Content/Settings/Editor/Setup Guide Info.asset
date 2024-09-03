@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6c018d8e81ea3d4fab8628d1e58d13a, type: 3}
+  m_Name: Setup Guide Info
+  m_EditorClassIdentifier: 
+  gameName: Bubble Merge
+  documentationURL: https://www.notion.so/wmelongames/Bubble-Merge-f7791ab382b14057913470ff0876bbc3
+  windowButtons: []
+  folderButtons:
+  - title: Level Backgrounds
+    textureName: icon_folder
+    folderPath: Assets/Project Data/Game/Prefabs/Level Backgrounds
+  - title: Level Shapes
+    textureName: icon_folder
+    folderPath: Assets/Project Data/Game/Prefabs/Level Shapes
+  - title: Level Items
+    textureName: icon_folder
+    folderPath: Assets/Project Data/Game/Prefabs/Level Items
+  fileButtons:
+  - title: Define Manager
+    textureName: icon_modules
+    filePath: Assets\Project Data\Content\Settings\Editor\Define Settings.asset
