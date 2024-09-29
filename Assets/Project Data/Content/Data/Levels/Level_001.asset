@@ -20,13 +20,13 @@ MonoBehaviour:
     recipe:
       ResultPreview: {fileID: 21300000, guid: 3ca08d13832e40e4cb958315478b1cd0, type: 3}
       Ingridients:
-      - branch: 10
+      - branch: 0
         stageId: 1
         amount: 1
-      - branch: 11
+      - branch: 1
         stageId: 1
         amount: 1
-      - branch: 13
+      - branch: 8
         stageId: 1
         amount: 1
     iceBubblesPerLevel: 0

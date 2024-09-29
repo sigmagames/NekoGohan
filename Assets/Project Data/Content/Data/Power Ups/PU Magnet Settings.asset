@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PU Magnet Settings
   m_EditorClassIdentifier: 
   type: 2
-  icon: {fileID: 21300000, guid: 13c110d8609cb0942a6265e47dad0648, type: 3}
+  icon: {fileID: 21300000, guid: 78f00cdc880c2a84692387d52bf4e60b, type: 3}
   behaviorPrefab: {fileID: 3063647110883700352, guid: 000116e29f41f1c48bc376e428662dbc,
     type: 3}
   defaultAmount: 3

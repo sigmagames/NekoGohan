@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PU Bombs Settings
   m_EditorClassIdentifier: 
   type: 3
-  icon: {fileID: 21300000, guid: 4aa45c5612b42434c812a298f4aaea34, type: 3}
+  icon: {fileID: 21300000, guid: 5d013cd812a23fc4e90dd540c2ea489f, type: 3}
   behaviorPrefab: {fileID: 5346197752940218379, guid: 5b2b13eb4da58434aad5524886092686,
     type: 3}
   defaultAmount: 2

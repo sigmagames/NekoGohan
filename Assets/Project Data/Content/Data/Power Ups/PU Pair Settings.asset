@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PU Pair Settings
   m_EditorClassIdentifier: 
   type: 1
-  icon: {fileID: 21300000, guid: c607df266aa773a46877fc716b6adebb, type: 3}
+  icon: {fileID: 21300000, guid: c59472536d08bc741ac7647f4e1a15d0, type: 3}
   behaviorPrefab: {fileID: 4874613128413248082, guid: f7869679593dbc64595d6d3d9fe08214,
     type: 3}
   defaultAmount: 3

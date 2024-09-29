@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PU Moves Settings
   m_EditorClassIdentifier: 
   type: 0
-  icon: {fileID: 21300000, guid: 2ff2ad98951ea8043bb71b7f649faa60, type: 3}
+  icon: {fileID: 21300000, guid: 23a41364f4ae7a74495438d09ddf038f, type: 3}
   behaviorPrefab: {fileID: 3063647110883700352, guid: 4d964638e821fda49a71e036a5174989,
     type: 3}
   defaultAmount: 3

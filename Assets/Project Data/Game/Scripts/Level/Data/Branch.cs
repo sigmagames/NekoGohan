@@ -3,23 +3,15 @@
     [System.Serializable]
     public enum Branch
     {
-        Bat = 0,
-        Bones = 1,
-        Clover = 2,
-        Crystal_Blue = 3,
-        Crystal_Yellow = 4,
-        Eyeball = 5,
-        Feather = 6,
-        Flower_Orange = 7,
-        Shroom_Purple = 8,
-        Shroom_Red = 9,
-
-        maru = 10,
-
-        sankaku = 11,
-
-        hosi = 12,
-
-        donatu = 13
+        maru = 0,
+        sikaku = 1,
+        sakana = 2,
+        zyuuzi = 3,
+        kuroba = 4,
+        sankaku = 5,
+        heart = 6,
+        donatu = 7,
+        hosi = 8,
+        neko = 9
     }
 }

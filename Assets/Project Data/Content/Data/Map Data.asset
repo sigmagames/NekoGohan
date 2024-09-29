@@ -15,5 +15,8 @@ MonoBehaviour:
   chunks:
   - {fileID: 587022173698637341, guid: 4000f0821f8e80d43a0bbe43d13b4a04, type: 3}
   - {fileID: 3963105262123856110, guid: 7fd79da7188bfda4ea178ad9bdef9baa, type: 3}
+  - {fileID: 3963105262123856110, guid: 02176c655cdce714cbfa6de26fd85b26, type: 3}
+  - {fileID: 3963105262123856110, guid: 4aca8934ff31cdd4bbbe7a314f115e92, type: 3}
+  - {fileID: 3963105262123856110, guid: 481aa8b4b2c0c584aa6e841a387eb965, type: 3}
   currentLevelVerticalOffset: 0.4
   firstChunkMaxLevelVerticalOffset: 0.2
