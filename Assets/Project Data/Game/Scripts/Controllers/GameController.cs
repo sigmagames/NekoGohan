@@ -14,7 +14,7 @@ namespace Watermelon
         private static GameController instance;
 
         [SerializeField] UIController uiController;
-
+        [SerializeField] GameObject nekoCompleteImage;
         private ParticlesController particlesController;
         private FloatingTextController floatingTextController;
         private CurrenciesController currenciesController;
@@ -41,6 +41,7 @@ namespace Watermelon
             CacheComponent(out tutorialController);
             CacheComponent(out mapBehavior);
             CacheComponent(out powerUpController);
+            nekoCompleteImage.SetActive(false);
         }
 
         private void Start()
@@ -105,6 +106,9 @@ namespace Watermelon
             UIController.HidePage<UIGame>();
             UIController.ShowPage<UIComplete>();
 
+            // ねこcomplete画像を表示
+            instance.nekoCompleteImage.SetActive(true);
+
             SaveController.LevelId++;
 
             if (SaveController.LevelId > LevelController.MaxLevelReached)
@@ -116,6 +120,9 @@ namespace Watermelon
         {
             SaveController.MarkAsSaveIsRequired();
             LevelController.LoadLevel(SaveController.LevelId);
+
+            // ねこcomplete画像を非表示
+            instance.nekoCompleteImage.SetActive(false);
 
             OnLevelChanged?.Invoke();
 
@@ -143,6 +150,9 @@ namespace Watermelon
             instance.mapBehavior.Show();
             UIController.HidePage<UIGame>();
             UIController.ShowPage<UIMainMenu>();
+
+            // ねこcomplete画像を非表示
+            instance.nekoCompleteImage.SetActive(false);
 
             AdsManager.ShowInterstitial(null);
         }

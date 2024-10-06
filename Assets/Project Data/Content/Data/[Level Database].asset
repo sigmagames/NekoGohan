@@ -16,6 +16,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fc75a3117bb72db4a9afbf783cd040d0, type: 2}
   - {fileID: 11400000, guid: 58a76b045a37ae84889ae58198c0d285, type: 2}
   - {fileID: 11400000, guid: c6570b5e6cc0ea243817d1caf88c1bd8, type: 2}
+  - {fileID: 11400000, guid: e1cf34a0d3803d6438ff9f870eedf52d, type: 2}
   branches:
   - branch: 0
     backgroundColor: {r: 0.5443971, g: 0.990566, b: 0.4625756, a: 1}
@@ -23,6 +24,7 @@ MonoBehaviour:
       type: 3}
     stages:
     - icon: {fileID: 21300000, guid: 12bd19c3f635ad947b9d539397c67a8a, type: 3}
+    - icon: {fileID: 21300000, guid: 17f7690a502ddf84e99a0d570e2f4e2f, type: 3}
     - icon: {fileID: 21300000, guid: 12bd19c3f635ad947b9d539397c67a8a, type: 3}
   - branch: 1
     backgroundColor: {r: 0.53962374, g: 0.4470588, b: 1, a: 1}
@@ -30,6 +32,7 @@ MonoBehaviour:
       type: 3}
     stages:
     - icon: {fileID: 21300000, guid: 861170931f5112240996f4938471cbba, type: 3}
+    - icon: {fileID: 21300000, guid: e869b987588dfa34d826ca276d6e9a19, type: 3}
     - icon: {fileID: 21300000, guid: 861170931f5112240996f4938471cbba, type: 3}
   - branch: 2
     backgroundColor: {r: 0, g: 0.64465153, b: 0.7830189, a: 1}
@@ -37,6 +40,7 @@ MonoBehaviour:
       type: 3}
     stages:
     - icon: {fileID: 21300000, guid: 4efee808161d21e4ab71dde755338e99, type: 3}
+    - icon: {fileID: 21300000, guid: 79487418c59444641a1621bba2273e4e, type: 3}
     - icon: {fileID: 21300000, guid: 4efee808161d21e4ab71dde755338e99, type: 3}
   - branch: 3
     backgroundColor: {r: 0.9545778, g: 1, b: 0.5235849, a: 1}
@@ -44,6 +48,7 @@ MonoBehaviour:
       type: 3}
     stages:
     - icon: {fileID: 21300000, guid: 1ecfb3d878daa4c4d89a72dd32820396, type: 3}
+    - icon: {fileID: 21300000, guid: a447bbc2063b1a749af5a5e65e5d8e52, type: 3}
     - icon: {fileID: 21300000, guid: 1ecfb3d878daa4c4d89a72dd32820396, type: 3}
   - branch: 4
     backgroundColor: {r: 0, g: 0.6603774, b: 0.032855093, a: 1}
@@ -51,6 +56,7 @@ MonoBehaviour:
       type: 3}
     stages:
     - icon: {fileID: 21300000, guid: 8912349d46ce0524da62955cb5f42549, type: 3}
+    - icon: {fileID: 21300000, guid: eb7988ea03baf3b4aae98f064a33c806, type: 3}
     - icon: {fileID: 21300000, guid: 8912349d46ce0524da62955cb5f42549, type: 3}
   - branch: 5
     backgroundColor: {r: 0.2980392, g: 1, b: 0.33085525, a: 1}
@@ -58,6 +64,7 @@ MonoBehaviour:
       type: 3}
     stages:
     - icon: {fileID: 21300000, guid: d41596eaa420a7243ae0f34b59fde77e, type: 3}
+    - icon: {fileID: 21300000, guid: 759c81afd8c24984cad683cc9afeabb1, type: 3}
     - icon: {fileID: 21300000, guid: d41596eaa420a7243ae0f34b59fde77e, type: 3}
   - branch: 6
     backgroundColor: {r: 1, g: 0.2980392, b: 0.43107808, a: 1}
@@ -65,6 +72,7 @@ MonoBehaviour:
       type: 3}
     stages:
     - icon: {fileID: 21300000, guid: 732d2741da5a34941834a3002ad796a8, type: 3}
+    - icon: {fileID: 21300000, guid: 91e01ba826eb43d46a04cb85968ac588, type: 3}
     - icon: {fileID: 21300000, guid: 732d2741da5a34941834a3002ad796a8, type: 3}
   - branch: 7
     backgroundColor: {r: 0.2980392, g: 1, b: 0.80184966, a: 1}
@@ -72,6 +80,7 @@ MonoBehaviour:
       type: 3}
     stages:
     - icon: {fileID: 21300000, guid: 950c7cbbac6eabc46a32839ad445503b, type: 3}
+    - icon: {fileID: 21300000, guid: 5a3183fd116d2944fab93164e91dc146, type: 3}
     - icon: {fileID: 21300000, guid: 950c7cbbac6eabc46a32839ad445503b, type: 3}
   - branch: 8
     backgroundColor: {r: 0.90219545, g: 1, b: 0.2980392, a: 1}
@@ -79,6 +88,7 @@ MonoBehaviour:
       type: 3}
     stages:
     - icon: {fileID: 21300000, guid: 39daf3858914e024f938f999b3026062, type: 3}
+    - icon: {fileID: 21300000, guid: aec8c1b9b7e3e904e83aff566a7527f4, type: 3}
     - icon: {fileID: 21300000, guid: 39daf3858914e024f938f999b3026062, type: 3}
   - branch: 9
     backgroundColor: {r: 1, g: 0.71655566, b: 0.2980392, a: 1}
@@ -86,6 +96,7 @@ MonoBehaviour:
       type: 3}
     stages:
     - icon: {fileID: 21300000, guid: ba5a822c0ad98b8438fb1047cc2a687c, type: 3}
+    - icon: {fileID: 21300000, guid: 9c601d51741a3a1489ed6cd79c69ddc6, type: 3}
     - icon: {fileID: 21300000, guid: ba5a822c0ad98b8438fb1047cc2a687c, type: 3}
   items:
   - type: 0
@@ -154,6 +165,6 @@ MonoBehaviour:
     prefab: {fileID: 5363470372480083075, guid: f2058ae853faab743b82c5b1987e3774,
       type: 3}
   potionSprites:
-  - {fileID: 21300000, guid: 3ca08d13832e40e4cb958315478b1cd0, type: 3}
-  - {fileID: 21300000, guid: b5d2f4ffa3d102c4ea1978ffb5f82eba, type: 3}
-  - {fileID: 21300000, guid: 144163714f25c6343a495968d074e31c, type: 3}
+  - {fileID: 21300000, guid: 8ae0eaa74fb3f3f45834dc1111db091a, type: 3}
+  - {fileID: 21300000, guid: ce45fa7ec1562b34fb3e6a219b4febf2, type: 3}
+  - {fileID: 21300000, guid: 4b24d133838518d469a99d61c69f9c36, type: 3}
