@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a70f3410f70d99a46953bdfa1cb4655c, type: 3}
-  m_Name: Level_002
+  m_Name: Level_006
   m_EditorClassIdentifier: 
-  note: Base
-  bubblesOnTheFieldAmount: 10
+  note: Banana + x2 Ice(1hp)
+  bubblesOnTheFieldAmount: 5
   turnsLimit: 15
   coinsReward: 20
   requirements:
@@ -22,16 +22,16 @@ MonoBehaviour:
       Ingridients:
       - branch: 0
         stageId: 2
-        amount: 1
+        amount: 2
       - branch: 1
         stageId: 2
-        amount: 1
-    iceBubblesPerLevel: 0
-    iceBubblesHealth: 0
+        amount: 2
+    iceBubblesPerLevel: 2
+    iceBubblesHealth: 1
     boxesPerLevel: 0
     boxesHealth: 0
     bombsData: []
   canBeUsedInRandomizer: 1
   items: []
-  levelShapeType: 0
+  levelShapeType: 4
   levelBackType: 1

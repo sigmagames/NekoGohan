@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   note: Base
   bubblesOnTheFieldAmount: 10
-  turnsLimit: 40
+  turnsLimit: 15
   coinsReward: 20
   requirements:
     recipe:

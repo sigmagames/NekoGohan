@@ -32,6 +32,9 @@ namespace Watermelon.Map
 
         TweenCase rubberCase;
 
+        // 最大チャンクIDを設定（チャンクIDは0から始まるので、最大IDは3になります）
+        private const int MaxChunkId = 4;
+
         private void Awake()
         {
             instance = this;
@@ -42,12 +45,12 @@ namespace Watermelon.Map
 
             if (Camera.main.aspect < 9f / 16f)
             {
-                // Real width of rge orthographic camera
+                // Real width of the orthographic camera
                 MapVisibleRectWidth = MapVisibleRectHeight * Camera.main.aspect;
             }
             else
             {
-                // Constraind width for correct scaling on wide screenes
+                // Constrained width for correct scaling on wide screens
                 MapVisibleRectWidth = MapVisibleRectHeight * 9f / 16f;
             }
 
@@ -72,14 +75,14 @@ namespace Watermelon.Map
             if (lastReachedChunkId == 0 && lastReachedLevelPos > data.firstChunkMaxLevelVerticalOffset)
                 lastReachedLevelPos = data.firstChunkMaxLevelVerticalOffset;
 
-            // We just reseting lastReachedChunks position, populaing parameters to let ScrollMap method do all the work of moving the map to the position we calculated above 
+            // We just resetting lastReachedChunks position, populating parameters to let ScrollMap method do all the work of moving the map to the position we calculated above 
             lastReachedChunk.SetPosition(0);
 
             currentLowestChunkPosY = 0;
             mouseMoveDeltaY = lastReachedLevelPos;
             ScrollMap();
 
-            // Populaing the map to fill the whole screen
+            // Populating the map to fill the whole screen
             CheckBottomChunks();
             CheckTopChunks();
         }
@@ -254,25 +257,39 @@ namespace Watermelon.Map
 
         private void CheckBottomChunks()
         {
-            // Checking for the chunks that are bellow the camera and not visible to the player anymore
+            // チャンクが画面外に出た場合の破棄処理
             while (LowestLoadedChunk.Position + LowestLoadedChunk.AdjustedHeight < -0.05f)
             {
+                // チャンクIDが0の場合はこれ以上破棄しない
+                if (LowestLoadedChunk.ChunkId == 0)
+                {
+                    break;
+                }
+
                 Destroy(LowestLoadedChunk.gameObject);
                 loadedChunks.RemoveAt(0);
             }
 
-
-            while (LowestLoadedChunk.Position >= 0 && LowestLoadedChunk.ChunkId != 0)
+            // チャンクが足りない場合の生成処理
+            while (LowestLoadedChunk.Position >= 0 && LowestLoadedChunk.ChunkId > 0)
             {
-                var newLowestChunk = Instantiate(data.chunks[(LowestLoadedChunk.ChunkId - 1) % data.chunks.Count]).GetComponent<MapChunkBehavior>();
+                var newLowestChunkId = LowestLoadedChunk.ChunkId - 1;
+
+                // チャンクIDが0未満にならないようにする
+                if (newLowestChunkId < 0)
+                {
+                    break;
+                }
+
+                var newLowestChunk = Instantiate(data.chunks[newLowestChunkId % data.chunks.Count]).GetComponent<MapChunkBehavior>();
                 newLowestChunk.SetMap(this);
-                newLowestChunk.Init(LowestLoadedChunk.ChunkId - 1, LowestLoadedChunk.StartLevelCount - newLowestChunk.LevelsCount);
+                newLowestChunk.Init(newLowestChunkId, LowestLoadedChunk.StartLevelCount - newLowestChunk.LevelsCount);
                 newLowestChunk.SetPosition(LowestLoadedChunk.Position - newLowestChunk.AdjustedHeight);
 
                 loadedChunks.Insert(0, newLowestChunk);
             }
 
-            // Reseting movement parameters in order to preserve scroll smoothness
+            // リセットしてスムーズなスクロールを維持
             mousePressPosY = Input.mousePosition.y / Camera.main.pixelHeight;
             currentLowestChunkPosY = LowestLoadedChunk.Position;
 
@@ -281,26 +298,40 @@ namespace Watermelon.Map
 
         private void CheckTopChunks()
         {
-            // Checking for the chunks that are above the camera and not visible to the player anymore
+            // チャンクが画面外に出た場合の破棄処理
             while (HighestLoadedChunk.Position > 1.05f)
             {
+                // チャンクIDが最大の場合はこれ以上破棄しない
+                if (HighestLoadedChunk.ChunkId == MaxChunkId)
+                {
+                    break;
+                }
+
                 Destroy(HighestLoadedChunk.gameObject);
                 loadedChunks.RemoveAt(loadedChunks.Count - 1);
             }
 
-            // Checking if there is the need to spawn a new chunk at the top of the screen
+            // チャンクが足りない場合の生成処理
             while (HighestLoadedChunk.Position + HighestLoadedChunk.AdjustedHeight <= 1)
             {
-                var newHighestChunk = Instantiate(data.chunks[(HighestLoadedChunk.ChunkId + 1) % data.chunks.Count]).GetComponent<MapChunkBehavior>();
+                var newHighestChunkId = HighestLoadedChunk.ChunkId + 1;
+
+                // チャンクIDが最大値を超えないようにする
+                if (newHighestChunkId > MaxChunkId)
+                {
+                    break;
+                }
+
+                var newHighestChunk = Instantiate(data.chunks[newHighestChunkId % data.chunks.Count]).GetComponent<MapChunkBehavior>();
 
                 newHighestChunk.SetMap(this);
-                newHighestChunk.Init(HighestLoadedChunk.ChunkId + 1, HighestLoadedChunk.StartLevelCount + HighestLoadedChunk.LevelsCount);
+                newHighestChunk.Init(newHighestChunkId, HighestLoadedChunk.StartLevelCount + HighestLoadedChunk.LevelsCount);
                 newHighestChunk.SetPosition(HighestLoadedChunk.Position + HighestLoadedChunk.AdjustedHeight);
 
                 loadedChunks.Add(newHighestChunk);
             }
         }
-    }
 
-    #endregion
+        #endregion
+    }
 }

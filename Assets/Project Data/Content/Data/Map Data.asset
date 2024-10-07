@@ -17,5 +17,6 @@ MonoBehaviour:
   - {fileID: 3963105262123856110, guid: 7fd79da7188bfda4ea178ad9bdef9baa, type: 3}
   - {fileID: 3963105262123856110, guid: 02176c655cdce714cbfa6de26fd85b26, type: 3}
   - {fileID: 3963105262123856110, guid: 4aca8934ff31cdd4bbbe7a314f115e92, type: 3}
+  - {fileID: 3963105262123856110, guid: dd336b58e2275624f9a7ce380813102c, type: 3}
   currentLevelVerticalOffset: 0.4
   firstChunkMaxLevelVerticalOffset: 0.2

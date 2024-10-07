@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Level_004
   m_EditorClassIdentifier: 
   note: Base
-  bubblesOnTheFieldAmount: 0
-  turnsLimit: 0
+  bubblesOnTheFieldAmount: 10
+  turnsLimit: 20
   coinsReward: 20
   requirements:
     recipe:
@@ -37,4 +37,4 @@ MonoBehaviour:
   canBeUsedInRandomizer: 1
   items: []
   levelShapeType: 0
-  levelBackType: 0
+  levelBackType: 1
