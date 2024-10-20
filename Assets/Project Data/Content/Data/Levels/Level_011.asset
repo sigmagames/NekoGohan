@@ -10,25 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a70f3410f70d99a46953bdfa1cb4655c, type: 3}
-  m_Name: Level_004
+  m_Name: Level_011
   m_EditorClassIdentifier: 
-  note: Base + x2 BounceZone
-  bubblesOnTheFieldAmount: 10
-  turnsLimit: 20
+  note: Base + x1 Wind
+  bubblesOnTheFieldAmount: 5
+  turnsLimit: 15
   coinsReward: 20
   requirements:
     recipe:
-      ResultPreview: {fileID: 21300000, guid: 8ae0eaa74fb3f3f45834dc1111db091a, type: 3}
+      ResultPreview: {fileID: 21300000, guid: ce45fa7ec1562b34fb3e6a219b4febf2, type: 3}
       Ingridients:
-      - branch: 0
+      - branch: 3
         stageId: 2
         amount: 2
-      - branch: 4
+      - branch: 1
         stageId: 2
         amount: 2
-      - branch: 6
-        stageId: 2
-        amount: 1
     iceBubblesPerLevel: 0
     iceBubblesHealth: 0
     boxesPerLevel: 0
@@ -36,13 +33,9 @@ MonoBehaviour:
     bombsData: []
   canBeUsedInRandomizer: 1
   items:
-  - type: 0
-    position: {x: -1.86, y: 1.36, z: 0}
-    rotation: {x: 0, y: 0, z: 0}
-    scale: {x: 1, y: 1, z: 1}
-  - type: 0
-    position: {x: 2.75, y: -2.03, z: 0}
+  - type: 5
+    position: {x: 0, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     scale: {x: 1, y: 1, z: 1}
   levelShapeType: 0
-  levelBackType: 1
+  levelBackType: 0

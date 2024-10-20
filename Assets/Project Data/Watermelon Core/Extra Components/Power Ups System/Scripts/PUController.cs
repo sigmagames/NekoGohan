@@ -67,35 +67,36 @@ namespace Watermelon
 #endif
         }
 
-        public static bool PurchasePowerUp(PUType powerUpType)
+    public static bool PurchasePowerUp(PUType powerUpType)
+    {
+        if (powerUpsLink.ContainsKey(powerUpType))
         {
-            if (powerUpsLink.ContainsKey(powerUpType))
+            PUBehavior powerUpBehavior = powerUpsLink[powerUpType];
+            if(powerUpBehavior.Settings.HasEnoughCurrency())
             {
-                PUBehavior powerUpBehavior = powerUpsLink[powerUpType];
-                if(powerUpBehavior.Settings.HasEnoughCurrency())
-                {
-                    CurrenciesController.Substract(powerUpBehavior.Settings.CurrencyType, powerUpBehavior.Settings.Price);
+                CurrenciesController.Substract(powerUpBehavior.Settings.CurrencyType, powerUpBehavior.Settings.Price);
 
-                    powerUpBehavior.Settings.Save.Amount += powerUpBehavior.Settings.PurchaseAmount;
+                powerUpBehavior.Settings.Save.Amount += powerUpBehavior.Settings.PurchaseAmount;
 
-                    powerUpsUIController.RedrawPanels();
+                powerUpsUIController.RedrawPanels();
 
-                    return true;
-                }
-                else
-                {
-                    UIController.ShowPage<UIIAPStore>();
-
-                    return false;
-                }
+                return true;
             }
             else
             {
-                Debug.LogWarning(string.Format("[Power Ups]: Power up with type {0} isn't registered.", powerUpType));
+                // プレイヤーのお金が足りない場合、UIIAPStoreには遷移しない
+                Debug.Log("Not enough currency to purchase power-up.");
+                return false;
             }
-
-            return false;
         }
+        else
+        {
+            Debug.LogWarning(string.Format("[Power Ups]: Power up with type {0} isn't registered.", powerUpType));
+        }
+
+        return false;
+    }
+
 
         public static void AddPowerUp(PUType powerUpType, int amount)
         {

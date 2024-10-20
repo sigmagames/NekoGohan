@@ -18,12 +18,12 @@ MonoBehaviour:
   adMobContainer:
     androidAppId: 
     iosAppId: 
-    androidBannerID: ca-app-pub-3940256099942544/6300978111
-    iOSBannerID: ca-app-pub-3940256099942544/2934735716
-    androidInterstitialID: ca-app-pub-3940256099942544/1033173712
-    iOSInterstitialID: ca-app-pub-3940256099942544/4411468910
-    androidRewardedVideoID: ca-app-pub-3940256099942544/5224354917
-    iOSRewardedVideoID: ca-app-pub-3940256099942544/1712485313
+    androidBannerID: 
+    iOSBannerID: 
+    androidInterstitialID: 
+    iOSInterstitialID: 
+    androidRewardedVideoID: 
+    iOSRewardedVideoID: 
     bannerType: 0
     bannerPosition: 0
     testDevicesIDs: []
@@ -44,8 +44,8 @@ MonoBehaviour:
     bannerType: 0
   dummyContainer:
     bannerPosition: 0
-  testMode: 1
-  systemLogs: 1
+  testMode: 0
+  systemLogs: 0
   interstitialFirstStartDelay: 40
   interstitialStartDelay: 40
   interstitialShowingDelay: 60
