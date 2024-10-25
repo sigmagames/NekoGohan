@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   note: 'Base + x2 Box(2hp) '
   bubblesOnTheFieldAmount: 5
-  turnsLimit: 15
+  turnsLimit: 20
   coinsReward: 20
   requirements:
     recipe:

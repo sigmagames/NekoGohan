@@ -58,37 +58,54 @@ namespace Watermelon
         }
 
         #region Show/Hide
-        public override void PlayShowAnimation()
+    public override void PlayShowAnimation()
+    {
+        // Hide all initial elements
+        rewardLabel.Hide(immediately: true);
+        multiplyRewardButtonFade.Hide(immediately: true);
+        multiplyRewardButton.interactable = true;
+        noThanksButtonText.Hide(immediately: true);
+        noThanksButton.interactable = false;
+        continueButtonFade.Hide(immediately: true);
+
+        // Show animation for the background and level complete label
+        backgroundFade.Show(duration: 0.3f);
+        levelCompleteLabel.Show();
+
+        // Display the result image from the level's recipe requirements
+        resultImage.sprite = LevelController.Level.Requirements.Recipe.ResultPreview;
+
+        // Show the continue button with a fade effect
+        continueButtonFade.Show(0.3f);
+
+        // Set the current reward from the level's coin reward
+        currentReward = LevelController.Level.CoinsReward;
+
+        // Show the reward label with a push scale animation
+        ShowRewardLabel(currentReward, false, 0.3f, delegate
         {
-            rewardLabel.Hide(immediately: true);
-            multiplyRewardButtonFade.Hide(immediately: true);
-            multiplyRewardButton.interactable = true;
-            noThanksButtonText.Hide(immediately: true);
-            noThanksButton.interactable = false;
-            continueButtonFade.Hide(immediately: true);
-
-            backgroundFade.Show(duration: 0.3f);
-            levelCompleteLabel.Show();
-
-            resultImage.sprite = LevelController.Level.Requirements.Recipe.ResultPreview;
-
-            continueButtonFade.Show(0.3f);
-
-            currentReward = LevelController.Level.CoinsReward;
-
-            ShowRewardLabel(currentReward, false, 0.3f, delegate
+            rewardLabel.RectTransform.DOPushScale(Vector3.one * 1.1f, Vector3.one, 0.2f, 0.2f).OnComplete(delegate
             {
-                rewardLabel.RectTransform.DOPushScale(Vector3.one * 1.1f, Vector3.one, 0.2f, 0.2f).OnComplete(delegate
+                FloatingCloud.SpawnCurrency(coinsHash, rewardLabel.RectTransform, currencyPanel.RectTransform, 10, "", () =>
                 {
-                    FloatingCloud.SpawnCurrency(coinsHash, rewardLabel.RectTransform, currencyPanel.RectTransform, 10, "", () =>
-                    {
-                        CurrenciesController.Add(CurrencyType.Coins, currentReward);
+                    CurrenciesController.Add(CurrencyType.Coins, currentReward);
 
-                        multiplyRewardButtonFade.Show();
-                    });
+                    // Show the multiply reward button after the currency animation completes
+                    multiplyRewardButtonFade.Show();
                 });
             });
+        });
+
+        // Check if the current level is the final stage (stage 20)
+        int stageNumber = SaveController.LevelId;
+        Debug.Log("Current Stage Number: " + stageNumber);
+        if (stageNumber == 19)
+        {
+            // Disable the continue button for the final stage
+            continueButton.interactable = false;
         }
+    }
+
 
         public override void PlayHideAnimation()
         {

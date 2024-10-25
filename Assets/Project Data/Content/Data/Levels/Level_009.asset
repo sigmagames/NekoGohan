@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   note: Base + x2 SpikesZone
   bubblesOnTheFieldAmount: 5
-  turnsLimit: 15
+  turnsLimit: 20
   coinsReward: 20
   requirements:
     recipe:
@@ -36,10 +36,10 @@ MonoBehaviour:
   - type: 3
     position: {x: 1.78, y: -3.06, z: 0}
     rotation: {x: 0, y: 0, z: 0}
-    scale: {x: 1, y: 1, z: 1}
+    scale: {x: 0.7, y: 0.7, z: 1}
   - type: 3
     position: {x: -1.95, y: 2.7, z: 0}
     rotation: {x: 0, y: 0, z: 0}
-    scale: {x: 1, y: 1, z: 1}
+    scale: {x: 0.7, y: 0.7, z: 1}
   levelShapeType: 0
   levelBackType: 1

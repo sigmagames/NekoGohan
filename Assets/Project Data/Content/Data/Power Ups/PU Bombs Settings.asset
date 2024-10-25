@@ -17,12 +17,12 @@ MonoBehaviour:
   behaviorPrefab: {fileID: 5346197752940218379, guid: 5b2b13eb4da58434aad5524886092686,
     type: 3}
   defaultAmount: 2
-  description: "\u306D\u3053\u30D1\u30F3\u30C1\u3057\u307E\u3059"
+  description: "\u306D\u3053\u30D1\u30F3\u30C1\u3059\u308B"
   requiredLevel: 1
   visualiseActiveState: 0
   backgroundColor: {r: 1, g: 0.54509807, b: 0.54509807, a: 1}
   currencyType: 0
-  price: 80
+  price: 50
   purchaseAmount: 2
   floatingMessage: 
   backgroundSolidColor: {r: 0.7294118, g: 0.16078432, b: 0.16078432, a: 0.49019608}

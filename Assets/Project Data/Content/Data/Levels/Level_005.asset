@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a70f3410f70d99a46953bdfa1cb4655c, type: 3}
   m_Name: Level_005
   m_EditorClassIdentifier: 
-  note: TopTriangles + x2 Ice(2hp)
+  note: Base + x2 Ice(2hp)
   bubblesOnTheFieldAmount: 8
   turnsLimit: 20
   coinsReward: 20
@@ -33,5 +33,5 @@ MonoBehaviour:
     bombsData: []
   canBeUsedInRandomizer: 1
   items: []
-  levelShapeType: 2
+  levelShapeType: 0
   levelBackType: 1

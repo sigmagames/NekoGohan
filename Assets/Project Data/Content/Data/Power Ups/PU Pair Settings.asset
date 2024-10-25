@@ -16,13 +16,13 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: c59472536d08bc741ac7647f4e1a15d0, type: 3}
   behaviorPrefab: {fileID: 4874613128413248082, guid: f7869679593dbc64595d6d3d9fe08214,
     type: 3}
-  defaultAmount: 3
+  defaultAmount: 2
   description: "\u3054\u306F\u3093\u304C1\u3064\u5F15\u3063\u4ED8\u304F"
   requiredLevel: 4
   visualiseActiveState: 0
   backgroundColor: {r: 0.05882353, g: 1, b: 0.72156864, a: 1}
   currencyType: 0
-  price: 60
+  price: 80
   purchaseAmount: 2
   floatingMessage: PAIRED!
   backgroundSolidColor: {r: 0.05882353, g: 0.54901963, b: 0.50980395, a: 1}

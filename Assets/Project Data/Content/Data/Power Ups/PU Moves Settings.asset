@@ -16,14 +16,14 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: 23a41364f4ae7a74495438d09ddf038f, type: 3}
   behaviorPrefab: {fileID: 3063647110883700352, guid: 4d964638e821fda49a71e036a5174989,
     type: 3}
-  defaultAmount: 3
-  description: "\u2464\u30BF\u30FC\u30F3\u5897\u3048\u308B"
+  defaultAmount: 2
+  description: "3\u30BF\u30FC\u30F3\u5897\u3048\u308B"
   requiredLevel: 3
   visualiseActiveState: 0
   backgroundColor: {r: 1, g: 1, b: 1, a: 1}
   currencyType: 0
-  price: 100
+  price: 50
   purchaseAmount: 2
   floatingMessage: +{0} MOVES
   backgroundSolidColor: {r: 0.7490196, g: 0.54509807, b: 0, a: 0.49019608}
-  extraTurns: 5
+  extraTurns: 3

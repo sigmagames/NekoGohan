@@ -101,20 +101,26 @@ namespace Watermelon
             UIController.ShowPage<UIGame>();
         }
 
-        public static void OnLevelCompleted()
+    public static void OnLevelCompleted()
+    {
+        UIController.HidePage<UIGame>();
+        UIController.ShowPage<UIComplete>();
+
+        // ねこcomplete画像を表示
+        instance.nekoCompleteImage.SetActive(true);
+
+        // LevelIdを20でストップ
+        if (SaveController.LevelId < 19)
         {
-            UIController.HidePage<UIGame>();
-            UIController.ShowPage<UIComplete>();
-
-            // ねこcomplete画像を表示
-            instance.nekoCompleteImage.SetActive(true);
-
             SaveController.LevelId++;
-
-            if (SaveController.LevelId > LevelController.MaxLevelReached)
-                LevelController.MaxLevelReached = SaveController.LevelId;
-
         }
+
+        if (SaveController.LevelId > LevelController.MaxLevelReached)
+        {
+            LevelController.MaxLevelReached = SaveController.LevelId;
+        }
+    }
+
 
         public static void NextLevel()
         {

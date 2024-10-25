@@ -12,20 +12,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a70f3410f70d99a46953bdfa1cb4655c, type: 3}
   m_Name: Level_020
   m_EditorClassIdentifier: 
-  note: Base
-  bubblesOnTheFieldAmount: 0
-  turnsLimit: 0
-  coinsReward: 20
+  note: 'Base + x1 IceZone + x2 SpikesZone + x2 Ice(1hp) + x1 Box(2hp) '
+  bubblesOnTheFieldAmount: 7
+  turnsLimit: 30
+  coinsReward: 50
   requirements:
     recipe:
       ResultPreview: {fileID: 21300000, guid: ce45fa7ec1562b34fb3e6a219b4febf2, type: 3}
-      Ingridients: []
-    iceBubblesPerLevel: 0
-    iceBubblesHealth: 0
-    boxesPerLevel: 0
-    boxesHealth: 0
+      Ingridients:
+      - branch: 0
+        stageId: 2
+        amount: 2
+      - branch: 2
+        stageId: 2
+        amount: 3
+      - branch: 8
+        stageId: 2
+        amount: 2
+    iceBubblesPerLevel: 2
+    iceBubblesHealth: 1
+    boxesPerLevel: 1
+    boxesHealth: 2
     bombsData: []
   canBeUsedInRandomizer: 1
-  items: []
+  items:
+  - type: 2
+    position: {x: 2.38, y: 2.69, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    scale: {x: 1, y: 2, z: 1}
+  - type: 3
+    position: {x: -2.25, y: -3.76, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    scale: {x: 0.7, y: 0.7, z: 1}
+  - type: 3
+    position: {x: 2.14, y: -3.82, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    scale: {x: 0.7, y: 0.7, z: 1}
   levelShapeType: 0
-  levelBackType: 0
+  levelBackType: 1

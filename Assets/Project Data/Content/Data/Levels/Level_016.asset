@@ -12,20 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a70f3410f70d99a46953bdfa1cb4655c, type: 3}
   m_Name: Level_016
   m_EditorClassIdentifier: 
-  note: Base
-  bubblesOnTheFieldAmount: 0
-  turnsLimit: 0
-  coinsReward: 20
+  note: 'Base + x2 Ice(1hp) + x2 Box(2hp) '
+  bubblesOnTheFieldAmount: 7
+  turnsLimit: 30
+  coinsReward: 30
   requirements:
     recipe:
       ResultPreview: {fileID: 21300000, guid: 8ae0eaa74fb3f3f45834dc1111db091a, type: 3}
-      Ingridients: []
-    iceBubblesPerLevel: 0
-    iceBubblesHealth: 0
-    boxesPerLevel: 0
-    boxesHealth: 0
+      Ingridients:
+      - branch: 0
+        stageId: 2
+        amount: 2
+      - branch: 2
+        stageId: 2
+        amount: 2
+      - branch: 1
+        stageId: 2
+        amount: 2
+    iceBubblesPerLevel: 2
+    iceBubblesHealth: 1
+    boxesPerLevel: 2
+    boxesHealth: 2
     bombsData: []
   canBeUsedInRandomizer: 1
   items: []
   levelShapeType: 0
-  levelBackType: 0
+  levelBackType: 1

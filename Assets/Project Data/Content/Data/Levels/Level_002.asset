@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level_002
   m_EditorClassIdentifier: 
   note: Base
-  bubblesOnTheFieldAmount: 10
+  bubblesOnTheFieldAmount: 7
   turnsLimit: 15
   coinsReward: 20
   requirements:
