@@ -35,7 +35,21 @@ namespace Watermelon
         private void Awake()
         {
             instance = this;
+            // // 初回起動チェック
+            // bool isFirstLaunch = !PlayerPrefs.HasKey("HasLaunchedBefore");
 
+            // if (isFirstLaunch)
+            // {
+            //     Debug.Log("[GameController]: 初回起動 - セーブデータをクリアします。");
+            //     // 初回起動時はセーブデータをクリア
+            //     SaveController.Initialise(useAutoSave: false, clearSave: true);
+            //     PlayerPrefs.SetInt("HasLaunchedBefore", 1);
+            //     PlayerPrefs.Save();
+            // }
+            // else
+            // {
+            //     SaveController.Initialise(useAutoSave: false);
+            // }
             SaveController.Initialise(useAutoSave: false);
 
             // Cache components
@@ -117,8 +131,8 @@ namespace Watermelon
         // ねこcomplete画像を表示
         instance.nekoCompleteImage.SetActive(true);
 
-        // LevelIdを20でストップ
-        if (SaveController.LevelId < 19)
+        // LevelIdを30でストップ
+        if (SaveController.LevelId < 29)
         {
             SaveController.LevelId++;
         }
@@ -127,6 +141,10 @@ namespace Watermelon
         {
             LevelController.MaxLevelReached = SaveController.LevelId;
         }
+
+        // セーブ処理を明示的に呼び出す
+        SaveController.Save(true);
+        Debug.Log("[GameController]: Level completed. Save data updated.");
     }
 
 

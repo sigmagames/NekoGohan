@@ -34,12 +34,12 @@ MonoBehaviour:
   canBeUsedInRandomizer: 1
   items:
   - type: 3
-    position: {x: 1.78, y: -3.06, z: 0}
+    position: {x: 1.72, y: -2.66, z: 0}
     rotation: {x: 0, y: 0, z: 0}
-    scale: {x: 0.7, y: 0.7, z: 1}
+    scale: {x: 1, y: 1, z: 1}
   - type: 3
-    position: {x: -1.95, y: 2.7, z: 0}
+    position: {x: -1.68, y: 2.52, z: 0}
     rotation: {x: 0, y: 0, z: 0}
-    scale: {x: 0.7, y: 0.7, z: 1}
+    scale: {x: 1, y: 1, z: 1}
   levelShapeType: 0
   levelBackType: 1

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a70f3410f70d99a46953bdfa1cb4655c, type: 3}
   m_Name: Level_018
   m_EditorClassIdentifier: 
-  note: SideTriangle + x1 SpikesZone + x2 Teleport
+  note: SideTriangle + x2 Teleport + x1 SpikesZone
   bubblesOnTheFieldAmount: 5
   turnsLimit: 20
   coinsReward: 40
@@ -33,16 +33,16 @@ MonoBehaviour:
     bombsData: []
   canBeUsedInRandomizer: 1
   items:
-  - type: 3
-    position: {x: 0.84, y: 0, z: 0}
-    rotation: {x: 0, y: 0, z: 0}
-    scale: {x: 0.7, y: 0.7, z: 1}
   - type: 4
     position: {x: -2.53, y: 2.33, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     scale: {x: 1, y: 1, z: 1}
   - type: 4
     position: {x: -2.5, y: -2.87, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
+  - type: 3
+    position: {x: 0.84, y: 0, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     scale: {x: 1, y: 1, z: 1}
   levelShapeType: 11

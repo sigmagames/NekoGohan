@@ -135,6 +135,30 @@ namespace Watermelon
                 onModuleInitialised += callback;
             }
         }
+
+        public static void ResetAllCurrencies()
+        {
+            if (currencies == null || currencies.Length == 0)
+            {
+                Debug.LogWarning("[CurrenciesController]: No currencies to reset.");
+                return;
+            }
+
+            // すべての通貨をリセット
+            for (int i = 0; i < currencies.Length; i++)
+            {
+                currencies[i].Amount = 0;
+
+                // セーブデータの更新をマーク
+                SaveController.MarkAsSaveIsRequired();
+
+                // 通貨変更イベントを発行（必要に応じて）
+                currencies[i].InvokeChangeEvent(0);
+            }
+
+            Debug.Log("[CurrenciesController]: All currencies have been reset to 0.");
+        }
+
     }
 
     public delegate void CurrencyChangeDelegate(Currency currency, int difference);

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Level_004
   m_EditorClassIdentifier: 
   note: Base + x2 BounceZone
-  bubblesOnTheFieldAmount: 10
+  bubblesOnTheFieldAmount: 7
   turnsLimit: 20
   coinsReward: 20
   requirements:
@@ -23,12 +23,9 @@ MonoBehaviour:
       - branch: 0
         stageId: 2
         amount: 2
-      - branch: 4
+      - branch: 7
         stageId: 2
         amount: 2
-      - branch: 6
-        stageId: 2
-        amount: 1
     iceBubblesPerLevel: 0
     iceBubblesHealth: 0
     boxesPerLevel: 0
@@ -37,12 +34,12 @@ MonoBehaviour:
   canBeUsedInRandomizer: 1
   items:
   - type: 0
-    position: {x: -2.32, y: 2.27, z: 0}
+    position: {x: -2.54, y: 2.03, z: 0}
     rotation: {x: 0, y: 0, z: 0}
-    scale: {x: 0.5, y: 1, z: 1}
+    scale: {x: 1, y: 1, z: 1}
   - type: 0
-    position: {x: 2.75, y: -2.03, z: 0}
-    rotation: {x: 0, y: 0, z: 0}
-    scale: {x: 0.5, y: 1, z: 1}
+    position: {x: 2.54, y: 0, z: 0}
+    rotation: {x: -0, y: 0, z: 180}
+    scale: {x: 1, y: 1, z: 1}
   levelShapeType: 0
   levelBackType: 1

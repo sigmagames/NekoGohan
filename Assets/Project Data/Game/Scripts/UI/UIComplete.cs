@@ -99,7 +99,7 @@ namespace Watermelon
         // Check if the current level is the final stage (stage 20)
         int stageNumber = SaveController.LevelId;
         Debug.Log("Current Stage Number: " + stageNumber);
-        if (stageNumber == 19)
+        if (stageNumber == 29)
         {
             // Disable the continue button for the final stage
             continueButton.interactable = false;

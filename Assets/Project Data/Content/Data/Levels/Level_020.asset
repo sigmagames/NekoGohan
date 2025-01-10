@@ -41,12 +41,12 @@ MonoBehaviour:
     rotation: {x: 0, y: 0, z: 0}
     scale: {x: 1, y: 2, z: 1}
   - type: 3
-    position: {x: -2.25, y: -3.76, z: 0}
+    position: {x: 2.33, y: -3.55, z: 0}
     rotation: {x: 0, y: 0, z: 0}
-    scale: {x: 0.7, y: 0.7, z: 1}
+    scale: {x: 1, y: 1, z: 1}
   - type: 3
-    position: {x: 2.14, y: -3.82, z: 0}
+    position: {x: -2.25, y: -3.55, z: 0}
     rotation: {x: 0, y: 0, z: 0}
-    scale: {x: 0.7, y: 0.7, z: 1}
+    scale: {x: 1, y: 1, z: 1}
   levelShapeType: 0
   levelBackType: 1

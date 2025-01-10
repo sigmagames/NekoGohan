@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using System.Threading;
+using System.IO;
 
 namespace Watermelon
 {
@@ -97,21 +98,29 @@ namespace Watermelon
 
             globalSave.Flush();
 
+            string savePath = $"{Application.persistentDataPath}/{SAVE_FILE_NAME}";
+
             BaseSaveWrapper saveWrapper = BaseSaveWrapper.ActiveWrapper;
-            if(saveWrapper.UseThreads())
+            if (saveWrapper.UseThreads())
             {
-                Thread saveThread = new Thread(() => BaseSaveWrapper.ActiveWrapper.Save(globalSave, SAVE_FILE_NAME));
+                Thread saveThread = new Thread(() =>
+                {
+                    BaseSaveWrapper.ActiveWrapper.Save(globalSave, SAVE_FILE_NAME);
+                    Debug.Log($"[Save Controller]: Data saved to {savePath}");
+                });
                 saveThread.Start();
             }
             else
             {
                 BaseSaveWrapper.ActiveWrapper.Save(globalSave, SAVE_FILE_NAME);
+                Debug.Log($"[Save Controller]: Data saved to {savePath}");
             }
 
             Debug.Log("[Save Controller]: Game is saved!");
 
             isSaveRequired = false;
         }
+
 
         public static void SaveCustom(GlobalSave globalSave)
         {
@@ -154,7 +163,23 @@ namespace Watermelon
 
         public static void DeleteSaveFile()
         {
-            BaseSaveWrapper.ActiveWrapper.Delete(SAVE_FILE_NAME);
+            string savePath = $"{Application.persistentDataPath}/{SAVE_FILE_NAME}";
+            if (File.Exists(savePath))
+            {
+                try
+                {
+                    File.Delete(savePath);
+                    Debug.Log($"[Save Controller]: Save file deleted at {savePath}");
+                }
+                catch (Exception ex)
+                {
+                    Debug.LogError($"[Save Controller]: Failed to delete save file at {savePath}. Exception: {ex.Message}");
+                }
+            }
+            else
+            {
+                Debug.LogWarning($"[Save Controller]: Save file does not exist at {savePath}");
+            }
         }
 
         public static GlobalSave GetGlobalSave()
@@ -165,5 +190,32 @@ namespace Watermelon
 
             return tempGlobalSave;
         }
+
+        public static void ResetGameProgress()
+        {
+            if (globalSave == null)
+            {
+                Debug.LogError("[Save Controller]: GlobalSave is null. Cannot reset progress.");
+                return;
+            }
+
+            // キャッシュされたデータをクリア
+            globalSave = null;
+
+            // セーブファイル削除
+            DeleteSaveFile();
+
+            Debug.Log("[Save Controller]: Save file deleted and cache cleared.");
+
+            // 新規の初期データを設定
+            InitClear(Time.time);
+            MarkAsSaveIsRequired();
+            Save(true);
+
+            Debug.Log("[Save Controller]: Data reset and new data saved.");
+        }
+
+
+
     }
 }

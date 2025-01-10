@@ -9,15 +9,15 @@ namespace Watermelon
     {
         [SerializeField] GameObject creditPanel1;  // 1オブジェクト
         [SerializeField] GameObject creditPanel2;  // 2オブジェクト
+        [SerializeField] GameObject creditPanel3;  // 3オブジェクト
         [SerializeField] Button rightButton;       // 右ボタンの参照
 
-        private bool isPanel1Active = true;  // 1オブジェクトが表示中かを管理するフラグ
+        private int currentPanelIndex = 0;  // 現在表示しているパネルのインデックス
 
         private void Start()
         {
-            isPanel1Active = true;  // 初期状態では1オブジェクトを表示
-            creditPanel1.SetActive(true);
-            creditPanel2.SetActive(false);
+            currentPanelIndex = 0;  // 初期状態では1オブジェクトを表示
+            ShowCurrentPanel();
 
             // 右ボタンの初期状態を0度に設定
             rightButton.transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -33,36 +33,27 @@ namespace Watermelon
             RotateButton();  // 右ボタンの回転を切り替える
         }
 
+        // 現在のパネルのみを表示し、他のパネルを非表示にする
+        private void ShowCurrentPanel()
+        {
+            creditPanel1.SetActive(currentPanelIndex == 0);
+            creditPanel2.SetActive(currentPanelIndex == 1);
+            creditPanel3.SetActive(currentPanelIndex == 2);
+        }
+
         // オブジェクトの表示/非表示を切り替える
         private void TogglePanels()
         {
-            if (isPanel1Active)
-            {
-                creditPanel1.SetActive(false);  // 1オブジェクトを非表示
-                creditPanel2.SetActive(true);   // 2オブジェクトを表示
-            }
-            else
-            {
-                creditPanel1.SetActive(true);   // 1オブジェクトを表示
-                creditPanel2.SetActive(false);  // 2オブジェクトを非表示
-            }
-
-            isPanel1Active = !isPanel1Active;  // 表示フラグを反転
+            currentPanelIndex = (currentPanelIndex + 1) % 3;  // 次のパネルに移動
+            ShowCurrentPanel();  // 現在のパネルを表示
         }
 
         // 右ボタンの回転を切り替える
         private void RotateButton()
         {
-            if (isPanel1Active)
-            {
-                // 0度にリセット
-                rightButton.transform.rotation = Quaternion.Euler(0, 0, 0);
-            }
-            else
-            {
-                // -180度に回転
-                rightButton.transform.rotation = Quaternion.Euler(0, 0, -180);
-            }
+            // 3番目のパネルを表示している場合のみ180度回転、それ以外は0度
+            float rotationAngle = currentPanelIndex == 2 ? -180 : 0;
+            rightButton.transform.rotation = Quaternion.Euler(0, 0, rotationAngle);
         }
     }
 }

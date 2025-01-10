@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a70f3410f70d99a46953bdfa1cb4655c, type: 3}
   m_Name: Level_012
   m_EditorClassIdentifier: 
-  note: Base + x1 BounceZone + x1 IceZone
+  note: Base + x1 IceZone + x1 BounceZone
   bubblesOnTheFieldAmount: 5
   turnsLimit: 20
   coinsReward: 30
@@ -33,13 +33,13 @@ MonoBehaviour:
     bombsData: []
   canBeUsedInRandomizer: 1
   items:
-  - type: 0
-    position: {x: -2.31, y: 2.23, z: 0}
-    rotation: {x: 0, y: 0, z: 0}
-    scale: {x: 0.5, y: 1, z: 1}
   - type: 2
     position: {x: 2.45, y: -2.53, z: 0}
     rotation: {x: 0, y: 0, z: 0}
     scale: {x: 1, y: 2, z: 1}
+  - type: 0
+    position: {x: -2.6, y: 2.29, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
+    scale: {x: 1, y: 1, z: 1}
   levelShapeType: 0
   levelBackType: 1

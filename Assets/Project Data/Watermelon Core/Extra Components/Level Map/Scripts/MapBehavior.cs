@@ -33,7 +33,7 @@ namespace Watermelon.Map
         TweenCase rubberCase;
 
         // 最大チャンクIDを設定（チャンクIDは0から始まるので、最大IDは3になります）
-        private const int MaxChunkId = 4;
+        private const int MaxChunkId = 30;
 
         private void Awake()
         {
@@ -143,6 +143,7 @@ namespace Watermelon.Map
 
         private void Update()
         {
+
             if (Input.GetMouseButtonDown(0))
             {
                 // mouse press y position mapped on 0-1 scale. 0 is the bottom of the screen, 1 is the top)
@@ -220,29 +221,26 @@ namespace Watermelon.Map
             }).SetEasing(Ease.Type.QuadOut);
         }
 
-        private void ScrollMap()
+    private void ScrollMap()
+    {
+        var pos = currentLowestChunkPosY + mouseMoveDeltaY;
+
+
+        if (pos > data.firstChunkMaxLevelVerticalOffset && LowestLoadedChunk.ChunkId == 0)
         {
-            var pos = currentLowestChunkPosY + mouseMoveDeltaY;
-
-            if (pos > data.firstChunkMaxLevelVerticalOffset && LowestLoadedChunk.ChunkId == 0)
-            {
-                // There are some math that kinda works
-
-                // The overshoot distance from the end of the map
-                var rubberDistance = pos - data.firstChunkMaxLevelVerticalOffset;
-                // Adding Easing for rubber effect
-                var interpolatedRubberDistance = Ease.Interpolate(rubberDistance, Ease.Type.SineOut);
-                // smoothing position depending on mouseDelta. If the mouse is not moving, we're just sticking to the actual position
-                var smoothedPos = Mathf.Lerp(pos, data.firstChunkMaxLevelVerticalOffset + interpolatedRubberDistance, mouseMoveDeltaY);
-                // Clamping position in order not to overshoot too far
-                pos = Mathf.Clamp(smoothedPos, data.firstChunkMaxLevelVerticalOffset, data.firstChunkMaxLevelVerticalOffset + 0.1f);
-            }
-
-            SetChunksPosition(pos);
-
-            CheckTopChunks();
-            CheckBottomChunks();
+            // 下限のスクロール位置制御
+            var rubberDistance = pos - data.firstChunkMaxLevelVerticalOffset;
+            var interpolatedRubberDistance = Ease.Interpolate(rubberDistance, Ease.Type.SineOut);
+            var smoothedPos = Mathf.Lerp(pos, data.firstChunkMaxLevelVerticalOffset + interpolatedRubberDistance, mouseMoveDeltaY);
+            pos = Mathf.Clamp(smoothedPos, data.firstChunkMaxLevelVerticalOffset, data.firstChunkMaxLevelVerticalOffset + 0.1f);
         }
+
+        SetChunksPosition(pos);
+
+        CheckTopChunks();
+        CheckBottomChunks();
+    }
+
 
         private void SetChunksPosition(float pos)
         {
